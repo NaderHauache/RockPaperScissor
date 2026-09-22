@@ -42,13 +42,6 @@ function getHumanChoice(){
             return +userChoice;
     }
 }
-/* Future implementation
-function abortGame(currentTurn, totalTurn){
-    let abortAsk = confirm(`Would you like to abort the game ? \
-                            Remains: ${currentTurn} / ${totalTurn}.`);
-
-    return abortAsk;
-}*/
 
 function playRound(){
     let computerChoice = getComputerChoice();
