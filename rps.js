@@ -14,7 +14,7 @@ function pickRandomNumber(){
     let randomNum = Math.random();
 
     //Divides randomNum by three and judges the third.
-    if (randomNum > 0.6)
+    if (randomNum > 0.71)
         randomNum = 2;
     else if (randomNum > 0.3)
         randomNum = 1;
