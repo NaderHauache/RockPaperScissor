@@ -13,9 +13,12 @@ function pickRandomNumber(){
     let randomNum = Math.random();
 
     //Divides randomNum by three and judges the third.
-    if (randomNum > 0.6)      randomNum = 2;
-    else if (randomNum > 0.3) randomNum = 1;
-    else                      randomNum = 0;
+    if (randomNum > 0.6)
+        randomNum = 2;
+    else if (randomNum > 0.3)
+        randomNum = 1;
+    else
+        randomNum = 0;
 
     //Using bitwise operator to convert 64bit float into integer.
     // Not(Not(a)) = a.
@@ -46,3 +49,25 @@ function abortGame(currentTurn, totalTurn){
 
     return abortAsk;
 }
+
+function playRound(){
+    let computerChoice = getComputerChoice();
+    let humanChoice = getHumanChoice();
+
+    //If Rock-Rock/Paper-Paper/Scissor-Scissor
+    if(humanChoice == computerChoice)
+        return 0;
+    //Given the fact that is not possible both lose, only draws, only win logic must be judged.
+    //0 = Rock, 1 = Paper, 2 = Scissor
+    //1 = Human, 2 = Computer
+    if(
+        (humanChoice == 0 && computerChoice == 2) ||
+        (humanChoice == 1 && computerChoice == 0) ||
+        (humanChoice == 2 && computerChoice == 1)
+      )
+        //Return 1 - Human
+        return 1;
+    //Return 2 - Computer
+    return 2;
+    }
+    

@@ -71,15 +71,15 @@ Some functions will be described here. Here are the rules to write functions:
 * A function must perform only one action.  
 * Function names must be clear to the reader.
 
-|    Function Name    |          Returns           |                                   Description                                    |
-| :-----------------: | :------------------------: | :------------------------------------------------------------------------------: |
-| pickRandomNumber()  |     An integer: \[0,3)     | Return a random number in the interval to provide a choice to the machine.&nbsp; |
-| getComputerChoice() |     An integer: \[0,3)     |                  Abstracts how the computer will play the turn.                  |
-|  getHumanChoice()   |     An integer: \[0,3)     |                   Ask the user which will be the right choice.                   |
-|    humanScore()     |    An integer: \[0,15\]    |               Returns the human score stored in a local variable.                |
-|   computerScore()   |    An integer: \[0,15\]    |              Returns the computer score stored in a local variable.              |
+|    Function Name    |          Returns            |                                   Description                                    |
+| :-----------------: | :------------------------:  | :------------------------------------------------------------------------------: |
+| pickRandomNumber()  |     An integer: \[0,3)      | Return a random number in the interval to provide a choice to the machine.&nbsp; |
+| getComputerChoice() |     An integer: \[0,3)      |                  Abstracts how the computer will play the turn.                  |
+|  getHumanChoice()   |     An integer: \[0,3)      |                   Ask the user which will be the right choice.                   |
+|    humanScore()     |    An integer: \[0,15\]     |               Returns the human score stored in a local variable.                |
+|   computerScore()   |    An integer: \[0,15\]     |              Returns the computer score stored in a local variable.              |
 |  showScoreboard()   | A String: \`${HS} x ${CS}\` |                  Returns a String to be printed on the console.                  |
-|     playRound()     |     A number: \[0,15)      |                         Shows which is the *n*th round.                          |
-|     playGame()      |            void            |     Structures the logic of game loop     |
+|     playRound()     |     A number: 0(draw) - 1(human) - 2(computer)       |                 Plays a round with both players. Informs the round winner.                           |
+|     playGame()      |            void             |     Structures the logic of game loop     |
 |     abortGame(currentTurn, TotalTurn)     |          Boolean           |         Asks if user wants to abort game.&nbsp;          |
 |     toInt(number)   |          A number           |         Provides a cast using bitwise operations as a trick to avoid callings to other functions. &nbsp;          |
