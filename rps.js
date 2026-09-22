@@ -39,3 +39,10 @@ function getHumanChoice(){
     }
     return userChoice;
 }
+
+function abortGame(currentTurn, totalTurn){
+    let abortAsk = confirm(`Would you like to abort the game ? \
+                            Remains: ${currentTurn} / ${totalTurn}.`);
+
+    return abortAsk;
+}
