@@ -21,3 +21,21 @@ function pickRandomNumber(){
     // Not(Not(a)) = a.
     return toInt(randomNum);
 }
+
+function getComputerChoice(){
+    return pickRandomNumber();
+}
+
+//Not consideringa a wrong input from user.
+function getHumanChoice(){
+    let loopExit = false;
+    while (loopExit == false){
+        let userChoice = prompt("Your turn! Choose one option: \
+                            Rock = 0 \
+                            Paper = 1 \
+                            Scissor = 2");
+        if (userChoice < 3 && userChoice >= 0)
+            loopExit = true;
+    }
+    return userChoice;
+}
