@@ -5,6 +5,7 @@ Date: 09.22.2026
 */
 
 function toInt(dfloatNum){
+    //Uses bitwise operation to cast it into integer
     return ~~dfloatNum;
 }
 
@@ -29,26 +30,25 @@ function getComputerChoice(){
     return pickRandomNumber();
 }
 
-//Not consideringa a wrong input from user.
+//Not considering a wrong input from user.
 function getHumanChoice(){
     let loopExit = false;
     while (loopExit == false){
         let userChoice = prompt("Your turn! Choose one option: \
-                            Rock = 0 \
+                            \n Rock = 0 \
                             Paper = 1 \
                             Scissor = 2");
         if (userChoice < 3 && userChoice >= 0)
-            loopExit = true;
+            return +userChoice;
     }
-    return userChoice;
 }
-
+/* Future implementation
 function abortGame(currentTurn, totalTurn){
     let abortAsk = confirm(`Would you like to abort the game ? \
                             Remains: ${currentTurn} / ${totalTurn}.`);
 
     return abortAsk;
-}
+}*/
 
 function playRound(){
     let computerChoice = getComputerChoice();
@@ -70,4 +70,38 @@ function playRound(){
     //Return 2 - Computer
     return 2;
     }
-    
+
+function playGame(){
+    let humanScore = 0, computerScore = 0;
+    console.log("Hello User. How are you Doing ? Let's play a game? =D");
+    console.log("This is the Rock-Paper-Scissor game.")
+    console.log("You will play against the machine 5 turns... Right?")
+    console.log("Get Ready ?")
+    for(let count = 0; count < 5; count += 1){
+        let turnWinner = playRound();
+        
+        if (turnWinner == 0){
+            console.log("Turn Tied. No Winner!");
+            console.log(`ScoreBoard: Human: ${humanScore} x Computer: ${computerScore}`);
+            console.log(`${4 - count} turn remains !`);
+        }
+
+        if (turnWinner == 1){
+            humanScore += 1;
+            console.log("You Won! Congratulations.");
+            console.log(`ScoreBoard: Human: ${humanScore} x Computer: ${computerScore}`);
+            console.log(`${4 - count} turn remains !`);
+        }
+
+        if(turnWinner == 2){
+            computerScore += 1;
+            console.log("You Lost! Try Again.");
+            console.log(`ScoreBoard: Human: ${humanScore} x Computer: ${computerScore}`);
+            console.log(`${4 - count} turn remains !`);
+        }
+    }
+    console.log("Game Finished. Thanks for playing =D");
+    console.log(`Final ScoreBoard: Human ${humanScore} x Computer ${computerScore}`);
+}
+
+playGame();

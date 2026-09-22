@@ -36,15 +36,14 @@ The software will be developed into a MVP(Minimal Value Product) only working on
 # Application Requirements
 These are the application requirements to describe what will be the functional requirements of application:
 
-1) Users will play against the machine;  
-2) Users will choose how many times will be played against the machine \[1 → 15\];  
-3) Users will need to choose Rock(0), Paper(1) or Scissor(2) option;  
+1) User will play against the machine;  
+2) User will play against the machine 5 turns;  
+3) User will need to choose Rock(0), Paper(1) or Scissor(2) option;  
 4) Machine will pick one also randomly;  
    1) The seed must be reseted each round;  
    2) The machine must choose the option before the user.  
 5) ScoreBoard must be informed to the user all the time while game is running;  
-6) An abort game option must be provided during all the game;  
-7) In the end of the game, the result must be informed as well.
+6) In the end of the game, the result must be informed as well.
 
 # Logical Game Fluxogram
 ```mermaid
