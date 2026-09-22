@@ -71,6 +71,15 @@ function playRound(){
     return 2;
     }
 
+function showScoreboard(humanScore, computerScore){
+    console.log(`ScoreBoard: Human: ${humanScore} x Computer: ${computerScore}`);
+}
+
+function showRemainingTurns(count){
+    console.log(`${(5-1) - count} turn remains !`);
+}
+
+
 function playGame(){
     let humanScore = 0, computerScore = 0;
     console.log("Hello User. How are you Doing ? Let's play a game? =D");
@@ -82,22 +91,22 @@ function playGame(){
         
         if (turnWinner == 0){
             console.log("Turn Tied. No Winner!");
-            console.log(`ScoreBoard: Human: ${humanScore} x Computer: ${computerScore}`);
-            console.log(`${4 - count} turn remains !`);
+            showScoreboard(humanScore, computerScore);
+            showRemainingTurns(count)
         }
 
         if (turnWinner == 1){
             humanScore += 1;
             console.log("You Won! Congratulations.");
-            console.log(`ScoreBoard: Human: ${humanScore} x Computer: ${computerScore}`);
-            console.log(`${4 - count} turn remains !`);
+            showScoreboard(humanScore, computerScore);
+            showRemainingTurns(count)
         }
 
-        if(turnWinner == 2){
+        if (turnWinner == 2){
             computerScore += 1;
             console.log("You Lost! Try Again.");
-            console.log(`ScoreBoard: Human: ${humanScore} x Computer: ${computerScore}`);
-            console.log(`${4 - count} turn remains !`);
+            showScoreboard(humanScore, computerScore);
+            showRemainingTurns(count)
         }
     }
     console.log("Game Finished. Thanks for playing =D");
