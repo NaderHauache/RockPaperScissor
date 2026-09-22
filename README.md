@@ -49,21 +49,19 @@ These are the application requirements to describe what will be the functional r
 # Logical Game Fluxogram
 ```mermaid
 flowchart TD
-    A([Start]) --> B[Display welcome message and asks how much rounds user will want to play]
-    B --> C[Player chooses: rock, paper or scissors.]
-    C -- Choice --> D[Computer picks random choice]
-    C -- Abort --> N
-    D --> E{Same choice?}
-    E -- Yes --> F[Result: Draw]
-    F -- No --> G{Player wins?}
-    G -- Yes --> H[Result: Player wins]
-    H -- No --> I[Result: Computer wins]
-    I --> J[Show result]
-    J --> K[Update Winner Score]
-    K --> L[Show ScoreBoard]
-    L --> M{Play again?}
-    M -- Yes --> C
-    M -- No --> N([End])
+    A([Start]) --> B[Display welcome message and asks how much rounds player will want to play]
+    B --> C[Computer Chooses: Rock, Paper or Scissors.]
+    C --> D[Player Chooses: Rock, Paper or Scissors.]
+    D -- Abort --> N
+    D -- Same Choice ? --> F{Result: Draw}
+    D -- Player Won ? --> G{Result: Player Wins!}
+    D -- Computer Won ? --> H{Result: Player Lost!}
+    F -- Update Result --> I[Show ScoreBoard]
+    G -- Update Result --> I[Show ScoreBoard]
+    H -- Update Result --> I[Show ScoreBoard]
+    I --> J[Should Play Again ? ]
+    J -- Yes(update limit counter) --> C
+    J -- No --> N[Exit]
 ```
 
 
@@ -80,7 +78,7 @@ Some functions will be described here. Here are the rules to write functions:
 |  getHumanChoice()   |     An integer: \[0,3)     |                   Ask the user which will be the right choice.                   |
 |    humanScore()     |    An integer: \[0,15\]    |               Returns the human score stored in a local variable.                |
 |   computerScore()   |    An integer: \[0,15\]    |              Returns the computer score stored in a local variable.              |
-|  showScoreboard()   | A String: \`${HS} x {CS}\` |                  Returns a String to be printed on the console.                  |
+|  showScoreboard()   | A String: \`${HS} x ${CS}\` |                  Returns a String to be printed on the console.                  |
 |     playRound()     |     A number: \[0,15)      |                         Shows which is the *n*th round.                          |
 |     playGame()      |            void            |     Runs the logical loop with the possibility to end the game all the time.     |
 |     abortGame()     |          Boolean           |         Is the function that will perform and abort on game loop.&nbsp;          |
