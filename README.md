@@ -82,3 +82,4 @@ Some functions will be described here. Here are the rules to write functions:
 |     playRound()     |     A number: \[0,15)      |                         Shows which is the *n*th round.                          |
 |     playGame()      |            void            |     Runs the logical loop with the possibility to end the game all the time.     |
 |     abortGame()     |          Boolean           |         Is the function that will perform and abort on game loop.&nbsp;          |
+|     toInt(number)   |          A number           |         Provides a cast using bitwise operations as a trick to avoid callings to other functions. &nbsp;          |

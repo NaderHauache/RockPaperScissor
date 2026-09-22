@@ -4,6 +4,10 @@ Author: NaderHauache.
 Date: 09.22.2026
 */
 
+function toInt(dfloatNum){
+    return ~~dfloatNum;
+}
+
 function pickRandomNumber(){
     //Math.random() returns a float in the (0,1) interval.
     let randomNum = Math.random();
@@ -15,5 +19,5 @@ function pickRandomNumber(){
 
     //Using bitwise operator to convert 64bit float into integer.
     // Not(Not(a)) = a.
-    return ~~randomNum;
+    return toInt(randomNum);
 }
